@@ -1,13 +1,17 @@
-import './App.css'
+import { Header } from './components/header/Header';
+import { Home } from './pages/Home';
+import { About } from './pages/About';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
   return (
     <>
-      <h1>World of Rick & Morty</h1>
-      <div className="card">
-      </div>
+    <Header />
+    <Home />
+    <About />
     </>
+
   )
 }
 
