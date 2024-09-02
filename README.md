@@ -6,8 +6,10 @@
 
 ## Tecnologías Utilizadas
 
+- **Vite**: Herramienta de desarrollo rápida para proyectos de frontend.
 - **React**: Librería de JavaScript para construir interfaces de usuario.
 - **TypeScript**: Un superset de JavaScript que añade tipado estático.
+- **SWC**: Compilador JavaScript de alto rendimiento.
 - **Tanstack Query**: Librería para el manejo de datos asincrónicos y su caché.
 - **Zustand**: Librería para el manejo del estado global en React.
 - **React Hook Form**: Librería para la gestión de formularios en React.
