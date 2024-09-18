@@ -1,0 +1,9 @@
+.card {
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  -moz-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
