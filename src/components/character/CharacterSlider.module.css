@@ -1,0 +1,92 @@
+/* Fondo del Slider */
+.carouselContainer {
+  position: relative;
+  background: rgba(0, 0, 0, 0.8); /* Color negro con transparencia */
+  padding: 2rem 0;
+  margin: 2%;
+  height: 50%;
+  border-radius: 2.5%;
+  overflow: hidden; /* Para asegurar que el contenido no se desborde */
+}
+
+/* Contenedor del Carrusel */
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilos para los Items del Carrusel */
+.carouselItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: transform 0.3s ease; /* Agregado transición para transformación */
+  padding: 100px;
+  text-align: center;
+}
+
+/* Estilos para las Cards */
+.card {
+  width: 200px; /* Tamaño fijo para las cards */
+  height: 300px; /* Ajusta la altura según sea necesario */
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Neon verde alrededor, más pronunciado */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Agregado transición para box-shadow */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+  text-align: center;
+  color: white;
+  margin: 1rem; /* Espacio alrededor de cada tarjeta */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.9); /* Aumenta el efecto neon al pasar el ratón */
+}
+
+/* Responsivo para Tablet */
+@media (max-width: 768px) {
+  .carouselContainer {
+    padding: 1rem; /* Añadir padding para evitar que las tarjetas se corten en los bordes */
+  }
+
+  .card {
+    width: 90%; /* Ajustar el ancho de las tarjetas para que se adapten a la pantalla de la tableta */
+    max-width: 150px; /* Tamaño máximo para mantener las proporciones */
+    height: auto; /* Altura automática para mantener las proporciones */
+    margin: 0 auto; /* Centrar las tarjetas horizontalmente */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Ajustar la sombra para pantallas de tamaño intermedio */
+  }
+
+  .carouselItem {
+    flex-direction: row; /* Alinear las tarjetas horizontalmente en tabletas */
+    flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan si hay espacio limitado */
+    align-items: center; /* Centrar las tarjetas verticalmente */
+    justify-content: center; /* Centrar las tarjetas horizontalmente */
+    gap: 1.5rem; /* Espacio entre tarjetas para evitar superposiciones */
+    padding: 1rem; /* Añadir padding para dar espacio alrededor de las tarjetas */
+  }
+}
+
+@media (max-width: 576px) {
+  .carouselContainer {
+    height: auto; /* Ajustar la altura según sea necesario */
+    padding: 1rem; /* Añadir padding para evitar que las tarjetas se corten */
+  }
+
+  .card {
+    width: 90%; /* Ajustar el ancho de las tarjetas para que se adapten a la pantalla */
+    max-width: 12rem; /* Tamaño máximo para mantener las proporciones */
+    height: auto; /* Altura automática para mantener las proporciones */
+    margin: 0 auto; /* Centrar las tarjetas horizontalmente */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Reducir la sombra para pantallas pequeñas */
+  }
+
+  .carouselItem {
+    flex-direction: column;
+    align-items: center; /* Centrar las tarjetas verticalmente */
+    padding: 1rem; /* Añadir padding para dar espacio alrededor de las tarjetas */
+    gap: 1.5rem; /* Espacio entre tarjetas para evitar superposiciones */
+  }
+}
+

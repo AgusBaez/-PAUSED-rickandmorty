@@ -1,6 +1,5 @@
 import style from "./home.module.css";
 import { Search } from "../components/search/Search.tsx";
-import { Character } from "../components/character/Character.tsx";
 
 export const Home = () => {
   return (
@@ -10,7 +9,6 @@ export const Home = () => {
         <p className="lead">by Agus Baez</p>
         <hr className="my-4" />
         <Search />
-        <Character />
       </div>
     </>
   );

@@ -3,40 +3,36 @@ import { Result } from "../../utils/types";
 import { useCharacters } from "../../hooks/useCharacters";
 import Card from "react-bootstrap/Card";
 
-export const Character = () => {
+export const CharacterGrid = () => {
   const { data, error, isError, isLoading, fetchNextPage, hasNextPage } =
     useCharacters();
 
   return isLoading ? (
-    <p style={{ textAlign: "center", fontSize: "1.2rem" }}>Loading...</p>
+    <p className={style.loading}>Loading...</p>
   ) : isError ? (
-    <p>Error loading data: {error?.message || "Oops.. Something went wrong"}</p>
+    <p className={style.error}>
+      Error loading data: {error?.message || "Oops.. Something went wrong"}
+    </p>
   ) : !data?.pages.length ? (
-    <p>No characters found</p>
+    <p className={style.noCharacters}>No characters found</p>
   ) : (
     <>
-      <h1>All Characters</h1>
-      <div className={style.card}>
+      <h1 className={style.title}>All Characters</h1>
+      <div className={style.cardContainer}>
         {data?.pages.map((page) =>
           page.results.map((character: Result) => (
-            <Card
-              style={{
-                width: "18rem",
-                padding: "1.5rem",
-                boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",
-                borderRadius: "2rem",
-                margin: "1rem",
-                cursor: "pointer",
-              }}
-              key={character.id}
-            >
-              <Card.Img variant="top" src={character.image} />
-              <Card.Body>
+            <Card className={style.card} key={character.id}>
+              <Card.Img
+                variant="top"
+                src={character.image}
+                className={style.cardImg}
+              />
+              <Card.Body className={style.cardBody}>
                 <Card.Title>{character.name}</Card.Title>
                 <Card.Text>
                   {character.species} - {character.origin.name}
                 </Card.Text>
-                <button> ❤️ </button>
+                <button className={style.favoriteButton}>❤️</button>
               </Card.Body>
             </Card>
           ))
@@ -45,7 +41,7 @@ export const Character = () => {
       {hasNextPage && (
         <button
           onClick={() => fetchNextPage()}
-          style={{ margin: "2rem auto", display: "block" }}
+          className={style.loadMoreButton}
         >
           Load More
         </button>

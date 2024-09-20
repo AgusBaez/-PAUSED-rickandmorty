@@ -1,9 +1,106 @@
-.card {
+/* Estilo para el contenedor de las tarjetas */
+.cardContainer {
   display: flex;
-  -moz-box-pack: center;
-  justify-content: center;
-  -moz-box-align: center;
-  align-items: center;
   flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem;
+  
+}
+
+/* Estilos para las tarjetas individuales */
+.card {
+  width: 18rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #1e1e1e; /* Fondo oscuro para las tarjetas */
+  color: #fff;
+} 
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 255, 0, 0.4); /* Efecto neón en el hover */
+}
+
+/* Estilo para la imagen de la tarjeta */
+.cardImg {
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Estilo para el cuerpo de la tarjeta */
+.cardBody {
+  text-align: center;
+}
+
+/* Estilo para el botón de favoritos */
+.favoriteButton {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #ff4081;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.favoriteButton:hover {
+  color: #f50057;
+}
+
+/* Estilo para el botón de cargar más */
+.loadMoreButton {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.loadMoreButton:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Estilo para el texto de carga y error */
+.loading,
+.error,
+.noCharacters {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Estilo para el título */
+.title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+/* Responsivo para Tablet */
+@media (max-width: 768px) {
+  .cardContainer {
+    gap: 1rem;
+  }
+
+  .card {
+    width: 15rem;
+  }
+}
+
+/* Responsivo para Smartphone */
+@media (max-width: 576px) {
+  .cardContainer {
+    gap: 0.5rem;
+  }
+
+  .card {
+    width: 12rem;
+  }
 }
 

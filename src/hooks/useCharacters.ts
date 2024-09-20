@@ -5,8 +5,8 @@ export const useCharacters = () => {
   const { data, error, isError, isLoading, fetchNextPage, hasNextPage } =
     useInfiniteQuery({
       queryKey: ["characters"],
-      queryFn: async ({ pageParam = 1, }) => {
-        const results = await fetchCharacter(pageParam, 'character', '');
+      queryFn: async ({ pageParam = 1 }) => {
+        const results = await fetchCharacter(pageParam, "character", "");
         return results;
       },
       initialPageParam: 1,
@@ -21,6 +21,7 @@ export const useCharacters = () => {
     isLoading,
     fetchNextPage,
     hasNextPage,
-    getCharacters: data?.pages.flatMap(p => p.results)
-  }
-}
+    getCharacters: data?.pages.flatMap((p) => p.results),
+  };
+};
+
