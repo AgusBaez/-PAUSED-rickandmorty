@@ -25,7 +25,8 @@ export const CharacterSlider = () => {
   ) : !data?.pages.length ? (
     <p className={styles.noCharacters}>No characters found</p>
   ) : (
-    <div className={styles.carouselContainer}>
+          <div className={styles.carouselContainer}>
+            <button>Opcion</button>
       <Carousel interval={null} className={styles.carousel}>
         {data?.pages.map((page, pageIndex) => {
           const characterGroups = groupCharacters(page.results, 5);

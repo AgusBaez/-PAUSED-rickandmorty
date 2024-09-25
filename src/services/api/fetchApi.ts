@@ -1,4 +1,4 @@
-export const fetchCharacter = async (
+export const fetchApi = async (
   page: number | 1,
   option: "character" | "episode" | "location",
   query: string | ""

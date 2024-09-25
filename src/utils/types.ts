@@ -44,3 +44,9 @@ export interface CharacterData {
   };
   image: string;
 }
+
+export interface fetchApiRequest {
+  page: number | 1,
+  option: "character" | "episode" | "location",
+  query: string | ""
+}

@@ -1,12 +1,12 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { fetchCharacter } from "../services/api/fetchCharacter";
+import { fetchApi } from "../services/api/fetchApi";
 
-export const useCharacters = () => {
+export const useCharacters = (option) => {
   const { data, error, isError, isLoading, fetchNextPage, hasNextPage } =
     useInfiniteQuery({
       queryKey: ["characters"],
       queryFn: async ({ pageParam = 1 }) => {
-        const results = await fetchCharacter(pageParam, "character", "");
+        const results = await fetchApi(pageParam, option, "");
         return results;
       },
       initialPageParam: 1,

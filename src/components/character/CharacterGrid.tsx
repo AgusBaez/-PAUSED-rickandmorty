@@ -2,10 +2,13 @@ import style from "./character.module.css";
 import { Result } from "../../utils/types";
 import { useCharacters } from "../../hooks/useCharacters";
 import Card from "react-bootstrap/Card";
+import { useState } from "react";
 
 export const CharacterGrid = () => {
   const { data, error, isError, isLoading, fetchNextPage, hasNextPage } =
     useCharacters();
+
+  const [sortBy, setSortBy] = useState();
 
   return isLoading ? (
     <p className={style.loading}>Loading...</p>
